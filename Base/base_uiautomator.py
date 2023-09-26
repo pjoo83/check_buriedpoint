@@ -27,7 +27,7 @@ class Element:
         """
         启动app,
         """
-        self.logger.save_log(("auto_d:{}".format("打开应用_" + package_name)))
+        # self.logger.save_log(("auto_d:{}".format("打开应用_" + package_name)))
         self.driver.app_start(package_name)
 
     def start_app_activity(self, package_name, activity_name):

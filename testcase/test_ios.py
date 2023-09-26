@@ -2,7 +2,7 @@ import time
 
 import pytest
 
-from Base.driver import init_driver_ios
+from Base.init_driver import init_driver_ios
 from Base.get_driver import GetDriver
 from Base.base import Base
 from PagesUI.page_element_ios import CommonElementIos

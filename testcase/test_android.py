@@ -1,7 +1,7 @@
 import time
 
 import pytest
-from Base.driver import init_driver_android_appium
+from Base.init_driver import init_driver_android_appium
 from Base.get_driver import GetDriver
 from Base.base import Base
 from PagesUI.page_element_android import CommonElementAndroid
