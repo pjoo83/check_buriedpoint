@@ -500,7 +500,7 @@ class Element:
 
     def scroll_to_ori(self, orientation="up", step_num=10):
         """滑动，默认滑动的距离  step_num=10"""
-        self.logger.save_log("auto_d:在当前页面滚动scroll_滚动方向{}".format(orientation))
+        # self.logger.save_log("auto_d:在当前页面滚动scroll_滚动方向{}".format(orientation))
         if orientation == "up":
             # 竖直向上滚动
             self.driver(scrollable=True).scroll(steps=step_num)

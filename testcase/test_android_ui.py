@@ -1,8 +1,9 @@
+import time
+
 from Base.get_driver import GetDriver_u2
 from Base.init_driver import init_driver_android_ui2
 from PagesUI.page_element_android import CommonElementAndroid
 import pytest
-import uiautomator2 as u2
 
 
 @pytest.mark.usefixtures('driver_setup')
@@ -16,6 +17,12 @@ class test_IOS:
 
     def test_02_test_live(self):
         self.driver.click_on_element(self.el.live)
+        self.driver.click_on_element(self.el.select_first_live)
+        self.driver.scroll_to_ori(orientation='hr')
+        time.sleep(2)
+        self.driver.scroll_to_ori(orientation='hl')
+
+
 
 
 test_IOS().test_02_test_live()
