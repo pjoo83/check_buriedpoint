@@ -10,7 +10,7 @@ class Element:
         初始化，数据，需要传入device,报告地址
         """
         self.driver = device
-        self.logger =None
+        self.logger = None
 
     def get_app_info(self, package_name, info_kind=None):
         """
@@ -129,7 +129,7 @@ class Element:
         self.logger.save_log("auto_d:拖动元素{}到元素{}，时间{}秒".format(selector1, selector2, duration))
         e = self.get_element(selector1)
         e2 = self.get_element(selector2)
-        e.drag_to(e2,duration)
+        e.drag_to(e2, duration)
 
     def pinch_e(self, selector, kind, percent=100, steps=5):
         """ 在元素上面，做两个手指缩放的操作，kind in 或者out,放大或者缩小"""
@@ -169,9 +169,9 @@ class Element:
             self.logger.save_log("auto_d:{}".format("没有返回到元素文本_" + selector))
         return element_e
 
-    def get_element(self, selector):
+    def get_element(self, selector: object) -> object:
         """获取元素，通过类型+元素名的方式传送进来，通过，来拆分"""
-        self.logger.save_log("auto_d:{}".format("获取元素_" + selector))
+        # self.logger.save_log("auto_d:{}".format("获取元素_" + selector))
         element = ""
         if "," not in selector:
             return self.driver(resourceId=selector)
@@ -188,7 +188,8 @@ class Element:
         elif selector_by == "c" or selector_by == "className":
             element = self.driver(className=selector_value)
         else:
-            self.logger.save_log("auto_d:{}".format("没有获取到元素_" + selector))
+            # self.logger.save_log("auto_d:{}".format("没有获取到元素_" + selector))
+            print("auto_d:{}".format("没有获取到元素_" + selector))
         return element
 
     def get_element_by_instance(self, selector, instance_num=0):
@@ -263,12 +264,10 @@ class Element:
         self.logger.save_log("auto_d:{}{}".format("重置所有监听器"))
         self.driver.watcher.reset()
 
-
     def set_delay_time(self, delay_time=1.5):
         """全局设置,两个操作的间隔时间"""
         self.logger.save_log("auto_d:{}{}".format("设置全局等待时间_", str(delay_time) + "秒"))
         self.driver.click_post_delay = delay_time
-
 
     def set_FastInputIME(self, boolean_d=True):
         """设置为FastInputIME输入法"""
@@ -336,7 +335,6 @@ class Element:
     #          操作
     # ***********************************
 
-
     def press_main_key(self, key_name):
         """
             home
@@ -401,9 +399,9 @@ class Element:
 
     def click_exist_element(self, selector, w_time=5):
         """判断元素是否存在，存在就点击，不存在就返回错误"""
-        self.logger.save_log(
-            "auto_d:判断当前页面是否存在元素且点击_{}，等待时间{}".format(selector, str(w_time))
-        )
+        # self.logger.save_log(
+        #     "auto_d:判断当前页面是否存在元素且点击_{}，等待时间{}".format(selector, str(w_time))
+        # )
         return self.get_element(selector).click_exists(timeout=w_time)
 
     # 获取元素对象的信息
@@ -444,7 +442,6 @@ class Element:
         """等待元素出现"""
         self.logger.save_log("auto_d:等待元素_{}消失，等待时间{}秒".format(selector, str(w_time)))
         return self.get_element(selector).wait_gone(w_time)
-
 
     def fling_orientation(self, orientation="down"):
         """滚动屏幕。down，horiz，vert，end"""
@@ -501,7 +498,6 @@ class Element:
         else:
             return False
 
-
     def scroll_to_ori(self, orientation="up", step_num=10):
         """滑动，默认滑动的距离  step_num=10"""
         self.logger.save_log("auto_d:在当前页面滚动scroll_滚动方向{}".format(orientation))
@@ -536,9 +532,12 @@ class Element:
 
     def click_on_element(self, selector):
         """点击元素"""
-        self.logger.save_log("auto_d:点击元素_{}".format(selector))
+        # self.logger.save_log("auto_d:点击元素_{}".format(selector))
         self.get_element(selector).click()
         time.sleep(1)
+
+    # def click_on_element_bt_xpath(self,selector):
+    #     self.get_element()
 
     def click_on_element_by_isntance(self, selector, instance_num=0):
         """点击元素通过元素index"""
@@ -579,7 +578,6 @@ class Element:
         else:
             self.logger.save_log("auto_d:{}".format("没有返回到元素文本_" + selector))
         return element_txt
-
 
     def get_e_from_children(self, p_selector, s_selector):
         """从父类查找子类元素"""
@@ -648,7 +646,6 @@ class Element:
             self.auto_d.get_phone_size()[0] / 2,
             50,
         )
-
 
     def get_phone_info(self):
         """获取手机的信息"""

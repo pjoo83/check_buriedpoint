@@ -18,10 +18,10 @@ class CommonElementAndroid:
         self.quit = (MobileBy.XPATH, '//*[@text="登出"]')
 
         # 直播部分=======================================================================================================
-        self.live = (MobileBy.XPATH, '//*[@text="直播"]')
+        self.live = 'x,//*[@text="直播"]'
         # 热门直播
         self.select_first_live = (MobileBy.XPATH, '//*[@resource-id="com.starmakerinteractive.starmaker:id'
                                                   '/live_hall_recycler_view"]/android.widget.RelativeLayout['
                                                   '1]/android.widget.RelativeLayout[2]/android.widget.FrameLayout[1]')
         # 热门直播
-        self.hot_live = (MobileBy.XPATH, '//*[@text="热门直播"]')
+        self.hot_live = '//*[@text="热门直播"]'
