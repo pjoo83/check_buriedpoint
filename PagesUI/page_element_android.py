@@ -20,12 +20,14 @@ class CommonElementAndroid:
         # 通用
         self.back_button = 'id,com.android.systemui:id/back'
         self.insufficient_balance = 'x,//*[@text="账户余额"]'
+        self.page_party = 'x,//*[@text="派对"]'
+
         # 直播部分=======================================================================================================
         self.live = 'x,//*[@text="直播"]'
         # 热门直播
         self.live_select = 'x,//*[@resource-id="com.starmakerinteractive.starmaker:id/live_hall_recycler_view' \
-                                 '"]/android.widget.RelativeLayout[2]/android.widget.RelativeLayout[' \
-                                 '2]/android.widget.FrameLayout[1] '
+                           '"]/android.widget.RelativeLayout[2]/android.widget.RelativeLayout[' \
+                           '2]/android.widget.FrameLayout[1] '
         # 等待
         self.live_loading = 'id,com.starmakerinteractive.starmaker:id/unstable_loading_avatar'
         # 直关注
@@ -40,3 +42,10 @@ class CommonElementAndroid:
         # 送礼
         self.live_gift = 'id,com.starmakerinteractive.starmaker:id/img_gift'
         self.live_gift_send = 'id,com.starmakerinteractive.starmaker:id/btn_send_gift'
+
+        # 搜索部分======================================================================================================
+        self.search_button = 'id,com.starmakerinteractive.starmaker:id/search_switcher_icon'
+        self.search_text = 'id,com.starmakerinteractive.starmaker:id/searchView'
+        self.search_result = 'id,com.starmakerinteractive.starmaker:id/tv_name'
+        self.search_select = 'x,//*[@resource-id="com.starmakerinteractive.starmaker:id/all_list"]/android.widget' \
+                             '.RelativeLayout[1] '
