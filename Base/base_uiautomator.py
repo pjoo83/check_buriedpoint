@@ -77,7 +77,7 @@ class Element:
 
     def wait_activity_appear(self, activity_name, w_time=10):
         """等待activity出现,默认等待的时间是10s"""
-        self.logger.save_log(("auto_d:{}".format("等待_" + str(w_time) + "秒_等" + activity_name + "出现")))
+        # self.logger.save_log(("auto_d:{}".format("等待_" + str(w_time) + "秒_等" + activity_name + "出现")))
         return self.driver.wait_activity(activity_name, w_time)
 
     def swipe_e(self, x1, y1, x2, y2, duration=0.5):
@@ -360,7 +360,7 @@ class Element:
 
     def click_on_point(self, x, y):
         """点击坐标点"""
-        self.logger.save_log("auto_d:{}x={},y={}".format("点击坐标_", x, y))
+        # self.logger.save_log("auto_d:{}x={},y={}".format("点击坐标_", x, y))
         self.driver.click(x, y)
 
     def double_click(self, x, y, du_time=0.5):
@@ -440,7 +440,7 @@ class Element:
 
     def wait_e_dis_appear(self, selector, w_time=5):
         """等待元素出现"""
-        self.logger.save_log("auto_d:等待元素_{}消失，等待时间{}秒".format(selector, str(w_time)))
+        # self.logger.save_log("auto_d:等待元素_{}消失，等待时间{}秒".format(selector, str(w_time)))
         return self.get_element(selector).wait_gone(w_time)
 
     def fling_orientation(self, orientation="down"):
@@ -631,7 +631,7 @@ class Element:
 
     def phone_sleep(self, time_num):
         """等待时间"""
-        self.logger.save_log("auto_d:{}".format("等待时间：_" + str(time_num)))
+        # self.logger.save_log("auto_d:{}".format("等待时间：_" + str(time_num)))
         time.sleep(time_num)
 
     # ***********************************

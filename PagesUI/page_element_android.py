@@ -17,9 +17,26 @@ class CommonElementAndroid:
         self.logout = (MobileBy.XPATH, '//*[@resource-id="com.starmakerinteractive.starmaker:id/btn_settings_logout"]')
         self.quit = (MobileBy.XPATH, '//*[@text="登出"]')
 
+        # 通用
+        self.back_button = 'id,com.android.systemui:id/back'
+        self.insufficient_balance = 'x,//*[@text="账户余额"]'
         # 直播部分=======================================================================================================
         self.live = 'x,//*[@text="直播"]'
         # 热门直播
-        self.select_first_live = 'x,//*[@resource-id="com.starmakerinteractive.starmaker:id/live_hall_recycler_view' \
+        self.live_select = 'x,//*[@resource-id="com.starmakerinteractive.starmaker:id/live_hall_recycler_view' \
                                  '"]/android.widget.RelativeLayout[2]/android.widget.RelativeLayout[' \
                                  '2]/android.widget.FrameLayout[1] '
+        # 等待
+        self.live_loading = 'id,com.starmakerinteractive.starmaker:id/unstable_loading_avatar'
+        # 直关注
+        self.live_anchor_follow = 'id,com.starmakerinteractive.starmaker:id/live_rlyt_anchor_follow'
+        # 评论
+        self.live_msg = 'id,com.starmakerinteractive.starmaker:id/img_msg'
+        self.live_meg_text = 'id,com.starmakerinteractive.starmaker:id/input_text_hint'
+        self.live_send_msg = ' id,com.starmakerinteractive.starmaker:id/send_button'
+        # 分享
+        self.live_share = 'id,com.starmakerinteractive.starmaker:id/img_shareroom'
+        self.live_share_friend = 'x,//*[@text="我的好友"]'
+        # 送礼
+        self.live_gift = 'id,com.starmakerinteractive.starmaker:id/img_gift'
+        self.live_gift_send = 'id,com.starmakerinteractive.starmaker:id/btn_send_gift'
