@@ -82,17 +82,44 @@ class test_android:
             self.driver.click_on_element(self.el.back_button, times=2)
         self.driver.click_on_element(self.el.back_button)
 
-    def test05_friends(self):
+    def test05_msg_chat_page(self):
         """
-        聊天页推荐
+        聊天-聊天
         """
-        self.driver.click_on_element(self.el.friend_page)
-        self.driver.wait_e_dis_appear(self.el.friend_msg)
-        if self.driver.wait_e_dis_appear(self.el.friend_msg_recommend_list) is False:
+        self.driver.click_on_element(self.el.chat_page)
+        self.driver.wait_e_dis_appear(self.el.chat_msg)
+        if self.driver.wait_e_dis_appear(self.el.chat_msg_recommend) is False:
             self.driver.scroll_to_ori('down')
-        self.driver.click_on_element(self.el.friend_msg_recommend_list)
+        self.driver.click_on_element(self.el.chat_msg_recommend)
         self.driver.click_on_element(self.el.back_button)
-        self.driver.click_on_element(self.el.friend_msg_recommend_follow)
+        self.driver.click_on_element(self.el.chat_msg_recommend_follow)
+
+    def test06_msg_follow_page(self):
+        """
+        聊天-关页
+        """
+        self.driver.click_on_element(self.el.chat_follow_page)
+        for i in range(100):
+            if self.driver.exist_element(self.el.chat_follow_recommend):
+                break
+            else:
+                self.driver.scroll_to_ori('up')
+        self.driver.click_on_element(self.el.chat_follow_recommend_select)
+        self.driver.click_on_element(self.el.back_button)
+        self.driver.click_on_element(self.el.chat_follow_recommend_follow)
+        self.driver.click_on_element(self.el.chat_follow_recommend_follow)
+
+    def test07_find_friend(self):
+        """
+        好友搜索
+        """
+        self.driver.click_on_element(self.el.find_friend)
+        self.driver.click_on_element(self.el.add_friend)
+        if self.driver.exist_element(self.el.find_friend_vicinity):
+            self.driver.click_on_element(self.el.find_friend_vicinity)
+        self.driver.click_on_element(self.el.find_friend_select)
+        self.driver.click_on_element(self.el.back_button)
+        self.driver.click_on_element(self.el.find_friend_follow)
 
 
-test_android().test05_friends()
+test_android().test07_find_friend()

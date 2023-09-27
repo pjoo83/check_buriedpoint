@@ -62,11 +62,28 @@ class CommonElementAndroid:
         self.ktv_share = 'id,com.starmakerinteractive.starmaker:id/player_act_share'
         self.ktv_gift = 'id,com.starmakerinteractive.starmaker:id/v_menu_send_gift'
 
-        # f riends部分
-        self.friend_page = 'x,//*[@content-desc="main_tab_message"]'
-        self.friend_msg = 'x,//*[@resource-id="com.starmakerinteractive.starmaker:id/tab_layout"]/android' \
-                          '.widget.LinearLayout[1]/android.widget.FrameLayout[2] '
-        self.friend_msg_recommend_list = 'x,//*[@resource-id="com.starmakerinteractive.starmaker:id/recycler_view' \
-                                         '"]/android.widget.RelativeLayout[7] '
-        self.friend_msg_recommend_follow = 'x,//*[@resource-id="com.starmakerinteractive.starmaker:id/recycler_view' \
-                                           '"]/android.widget.RelativeLayout[7]/android.widget.FrameLayout[2] '
+        # friends部分===================================================================================================
+        # 聊天页
+        self.chat_page = 'x,//*[@content-desc="main_tab_message"]'
+        self.chat_msg = 'x,//*[@resource-id="com.starmakerinteractive.starmaker:id/tab_layout"]/android' \
+                        '.widget.LinearLayout[1]/android.widget.FrameLayout[2] '
+        self.chat_msg_recommend = 'x,//*[@resource-id="com.starmakerinteractive.starmaker:id/recycler_view' \
+                                  '"]/android.widget.RelativeLayout[7] '
+        self.chat_msg_recommend_follow = 'x,//*[@resource-id="com.starmakerinteractive.starmaker:id/recycler_view' \
+                                         '"]/android.widget.RelativeLayout[7]/android.widget.FrameLayout[2] '
+        # 关注页
+        self.chat_follow_page = 'x,//*[@resource-id="com.starmakerinteractive.starmaker:id/tab_layout"]/android' \
+                                '.widget.LinearLayout[1]/android.widget.FrameLayout[1] '
+        self.chat_follow_recommend = 'id,com.starmakerinteractive.starmaker:id/tv_title'
+        self.chat_follow_recommend_select = 'x,//*[@resource-id="com.starmakerinteractive.starmaker:id/recycler_view' \
+                                            '"]/android.widget.RelativeLayout[7] '
+        self.chat_follow_recommend_follow = 'id,com.starmakerinteractive.starmaker:id/follow_icon'
+
+        # 好友搜索
+        self.find_friend = 'id,com.starmakerinteractive.starmaker:id/iv_create_conversation'
+        self.add_friend = 'x,//*[@text="添加好友"]'
+        self.find_friend_vicinity = 'id,com.starmakerinteractive.starmaker:id/btw_dialog_request'
+        self.find_friend_select = 'x,//*[@resource-id="com.starmakerinteractive.starmaker:id/rv_find_friend"]/android' \
+                                  '.widget.RelativeLayout[1] '
+        self.find_friend_follow = 'x,//*[@resource-id="com.starmakerinteractive.starmaker:id/rv_find_friend"]/android' \
+                                  '.widget.RelativeLayout[1]/android.widget.FrameLayout[2] '

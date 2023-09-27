@@ -392,9 +392,9 @@ class Element:
 
     def exist_element(self, selector):
         """判断元素是否存在，返回true或者是false"""
-        self.logger.save_log("auto_d:判断当前页面是否存在元素_{}".format(selector))
+        # self.logger.save_log("auto_d:判断当前页面是否存在元素_{}".format(selector))
         result = self.get_element(selector).exists
-        self.logger.save_log("auto_d:判断当前页面是否存在元素_{},结果{}".format(selector, result))
+        # self.logger.save_log("auto_d:判断当前页面是否存在元素_{},结果{}".format(selector, result))
         return result
 
     def click_exist_element(self, selector, w_time=5):
