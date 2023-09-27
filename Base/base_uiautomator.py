@@ -365,7 +365,7 @@ class Element:
 
     def double_click(self, x, y, du_time=0.5):
         """双击坐标点"""
-        self.logger.save_log("auto_d:{}{}{}".format("双击坐标_", x, y))
+        # self.logger.save_log("auto_d:{}{}{}".format("双击坐标_", x, y))
         self.driver.double_click(x, y, du_time)
 
     def long_click(self, x, y, du_time=0):
@@ -530,11 +530,12 @@ class Element:
         else:
             return False
 
-    def click_on_element(self, selector):
+    def click_on_element(self, selector,times=1):
         """点击元素"""
         # self.logger.save_log("auto_d:点击元素_{}".format(selector))
-        self.get_element(selector).click()
-        time.sleep(1)
+        for i in range(times):
+            self.get_element(selector).click()
+            time.sleep(1)
 
     # def click_on_element_bt_xpath(self,selector):
     #     self.get_element()

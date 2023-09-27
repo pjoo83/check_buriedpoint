@@ -1,5 +1,3 @@
-import time
-
 from Base.get_driver import GetDriver_u2
 from Base.init_driver import init_driver_android_ui2
 from PagesUI.page_element_android import CommonElementAndroid
@@ -40,9 +38,10 @@ class test_android:
         self.driver.wait_e_dis_appear(self.el.live_share)
         self.driver.click_on_element(self.el.live_share)
         self.driver.click_on_element(self.el.back_button)
+        self.driver.click_on_element(self.el.ktv_gift)
+        self.driver.click_on_element(self.el.gift_send)
         if self.driver.wait_e_dis_appear(self.el.insufficient_balance):
-            self.driver.click_on_element(self.el.back_button)
-            self.driver.click_on_element(self.el.back_button)
+            self.driver.click_on_element(self.el.back_button, times=2)
         self.driver.click_on_element(self.el.back_button)
 
     def test03_search(self):
@@ -51,7 +50,7 @@ class test_android:
         """
         self.driver.click_on_element(self.el.page_party)
         self.driver.click_on_element(self.el.search_button)
-        self.driver.sent_txt_by_selector(self.el.search_text,'為你寫下這首情歌')
+        self.driver.sent_txt_by_selector(self.el.search_text, '為你寫下這首情歌')
         self.driver.wait_e_dis_appear(self.el.search_result)
         self.driver.click_on_element(self.el.search_result)
         self.driver.wait_e_dis_appear(self.el.search_select)
@@ -59,6 +58,29 @@ class test_android:
         self.driver.click_on_element(self.el.back_button)
         self.driver.click_on_element(self.el.back_button)
 
+    def test04_ktv(self):
+        """
+        KTV
+        """
+        self.driver.click_on_element(self.el.page_party)
+        self.driver.click_on_element(self.el.ktv_page)
+        self.driver.click_on_element(self.el.ktv_tab)
+        self.driver.click_on_element(self.el.ktv_room_select)
+        self.driver.wait_e_dis_appear(self.el.ktv_room_owner)
+        self.driver.click_on_element(self.el.ktv_room_owner)
+        self.driver.wait_e_dis_appear(self.el.ktv_room_homeowner)
+        self.driver.click_on_element(self.el.ktv_room_homeowner)
+        self.driver.click_on_element(self.el.ktv_follow)
+        self.driver.click_on_element(self.el.ktv_follow)
+        self.driver.click_on_element(self.el.ktv_cancel_follow)
+        self.driver.click_on_element(self.el.back_button, times=2)
+        self.driver.click_on_element(self.el.ktv_share)
+        self.driver.click_on_element(self.el.back_button)
+        self.driver.click_on_element(self.el.ktv_gift)
+        self.driver.click_on_element(self.el.gift_send)
+        if self.driver.wait_e_dis_appear(self.el.insufficient_balance):
+            self.driver.click_on_element(self.el.back_button, times=2)
+        self.driver.click_on_element(self.el.back_button)
 
 
-test_android().test03_search()
+test_android().test04_ktv()

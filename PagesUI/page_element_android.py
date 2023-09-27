@@ -21,6 +21,7 @@ class CommonElementAndroid:
         self.back_button = 'id,com.android.systemui:id/back'
         self.insufficient_balance = 'x,//*[@text="账户余额"]'
         self.page_party = 'x,//*[@text="派对"]'
+        self.gift_send = 'id,com.starmakerinteractive.starmaker:id/btn_send_gift'
 
         # 直播部分=======================================================================================================
         self.live = 'x,//*[@text="直播"]'
@@ -41,7 +42,6 @@ class CommonElementAndroid:
         self.live_share_friend = 'x,//*[@text="我的好友"]'
         # 送礼
         self.live_gift = 'id,com.starmakerinteractive.starmaker:id/img_gift'
-        self.live_gift_send = 'id,com.starmakerinteractive.starmaker:id/btn_send_gift'
 
         # 搜索部分======================================================================================================
         self.search_button = 'id,com.starmakerinteractive.starmaker:id/search_switcher_icon'
@@ -49,3 +49,15 @@ class CommonElementAndroid:
         self.search_result = 'id,com.starmakerinteractive.starmaker:id/tv_name'
         self.search_select = 'x,//*[@resource-id="com.starmakerinteractive.starmaker:id/all_list"]/android.widget' \
                              '.RelativeLayout[1] '
+
+        # KTV部分 ======================================================================================================
+        self.ktv_page = 'x,//*[@text="歌房"]'
+        self.ktv_tab = 'x,//*[@resource-id="com.starmakerinteractive.starmaker:id/tab_layout"]/android.widget' \
+                       '.LinearLayout[1]/android.widget.FrameLayout[2] '
+        self.ktv_room_select = 'id,com.starmakerinteractive.starmaker:id/room_bg'
+        self.ktv_room_owner = 'id,com.starmakerinteractive.starmaker:id/room_owner_level'
+        self.ktv_room_homeowner = 'id,com.starmakerinteractive.starmaker:id/rl_owner_container'
+        self.ktv_follow = 'id,com.starmakerinteractive.starmaker:id/btn_follow'
+        self.ktv_cancel_follow = 'id,com.starmakerinteractive.starmaker:id/common_dialog_btn_positive'
+        self.ktv_share = 'id,com.starmakerinteractive.starmaker:id/player_act_share'
+        self.ktv_gift = 'id,com.starmakerinteractive.starmaker:id/v_menu_send_gift'
