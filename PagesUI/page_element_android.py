@@ -17,7 +17,7 @@ class CommonElementAndroid:
         self.logout = (MobileBy.XPATH, '//*[@resource-id="com.starmakerinteractive.starmaker:id/btn_settings_logout"]')
         self.quit = (MobileBy.XPATH, '//*[@text="登出"]')
 
-        # 通用
+        # 通用==========================================================================================================
         self.back_button = 'id,com.android.systemui:id/back'
         self.insufficient_balance = 'x,//*[@text="账户余额"]'
         self.page_party = 'x,//*[@content-desc="main_tab_discovery"]'
