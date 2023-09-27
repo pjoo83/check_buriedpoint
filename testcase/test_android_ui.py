@@ -82,5 +82,17 @@ class test_android:
             self.driver.click_on_element(self.el.back_button, times=2)
         self.driver.click_on_element(self.el.back_button)
 
+    def test05_friends(self):
+        """
+        聊天页推荐
+        """
+        self.driver.click_on_element(self.el.friend_page)
+        self.driver.wait_e_dis_appear(self.el.friend_msg)
+        if self.driver.wait_e_dis_appear(self.el.friend_msg_recommend_list) is False:
+            self.driver.scroll_to_ori('down')
+        self.driver.click_on_element(self.el.friend_msg_recommend_list)
+        self.driver.click_on_element(self.el.back_button)
+        self.driver.click_on_element(self.el.friend_msg_recommend_follow)
 
-test_android().test04_ktv()
+
+test_android().test05_friends()

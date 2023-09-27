@@ -533,6 +533,7 @@ class Element:
     def click_on_element(self, selector,times=1):
         """点击元素"""
         # self.logger.save_log("auto_d:点击元素_{}".format(selector))
+        # print("auto_d:点击元素_{}".format(selector))
         for i in range(times):
             self.get_element(selector).click()
             time.sleep(1)

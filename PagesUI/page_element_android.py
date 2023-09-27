@@ -20,7 +20,7 @@ class CommonElementAndroid:
         # 通用
         self.back_button = 'id,com.android.systemui:id/back'
         self.insufficient_balance = 'x,//*[@text="账户余额"]'
-        self.page_party = 'x,//*[@text="派对"]'
+        self.page_party = 'x,//*[@content-desc="main_tab_discovery"]'
         self.gift_send = 'id,com.starmakerinteractive.starmaker:id/btn_send_gift'
 
         # 直播部分=======================================================================================================
@@ -61,3 +61,12 @@ class CommonElementAndroid:
         self.ktv_cancel_follow = 'id,com.starmakerinteractive.starmaker:id/common_dialog_btn_positive'
         self.ktv_share = 'id,com.starmakerinteractive.starmaker:id/player_act_share'
         self.ktv_gift = 'id,com.starmakerinteractive.starmaker:id/v_menu_send_gift'
+
+        # f riends部分
+        self.friend_page = 'x,//*[@content-desc="main_tab_message"]'
+        self.friend_msg = 'x,//*[@resource-id="com.starmakerinteractive.starmaker:id/tab_layout"]/android' \
+                          '.widget.LinearLayout[1]/android.widget.FrameLayout[2] '
+        self.friend_msg_recommend_list = 'x,//*[@resource-id="com.starmakerinteractive.starmaker:id/recycler_view' \
+                                         '"]/android.widget.RelativeLayout[7] '
+        self.friend_msg_recommend_follow = 'x,//*[@resource-id="com.starmakerinteractive.starmaker:id/recycler_view' \
+                                           '"]/android.widget.RelativeLayout[7]/android.widget.FrameLayout[2] '
