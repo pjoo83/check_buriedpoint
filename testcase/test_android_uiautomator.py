@@ -118,6 +118,17 @@ class test_android:
         self.driver.click_on_element(self.el.back_button)
         self.driver.click_on_element(self.el.find_friend_follow)
 
+    def test08_notice_room(self):
+        """
+        消息通知页房间
+        """
+        self.driver.click_on_element(self.el.notice_page)
+        if self.driver.exist_element(self.el.notice_room) is False:
+            self.driver.scroll_to_ori('down')
+        self.driver.wait_e_dis_appear(self.el.notice_room)
+        self.driver.click_on_element(self.el.notice_room_click)
+        self.driver.click_on_element(self.el.back_button)
+
     def test_button(self):
         self.driver.click_on_element(self.el.ktv_gift)
 

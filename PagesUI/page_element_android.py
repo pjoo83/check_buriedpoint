@@ -87,3 +87,10 @@ class CommonElementAndroid:
                                   '.widget.RelativeLayout[1] '
         self.find_friend_follow = 'x,//*[@resource-id="com.starmakerinteractive.starmaker:id/rv_find_friend"]/android' \
                                   '.widget.RelativeLayout[1]/android.widget.FrameLayout[2] '
+
+        # 通知页房间
+        self.notice_page = 'x,//*[@resource-id="com.starmakerinteractive.starmaker:id/tab_layout"]/android.widget' \
+                           '.LinearLayout[1]/android.widget.FrameLayout[3] '
+        self.notice_room = 'x,//*[@resource-id="com.starmakerinteractive.starmaker:id/live_recommend_recycler_view"]'
+        self.notice_room_click = 'x,//*[@resource-id="com.starmakerinteractive.starmaker:id' \
+                                 '/live_recommend_recycler_view"]/android.widget.RelativeLayout[1] '
