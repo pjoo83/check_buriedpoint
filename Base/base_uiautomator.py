@@ -85,10 +85,11 @@ class Element:
         self.logger.save_log("auto_d:滑动（swipe）_坐标{},{},{},{}".format(str(x1), str(y1), str(x2), str(y2)))
         self.driver.swipe(x1, y1, x2, y2, duration)
 
-    def swipe_ext_dis(self, ori, scale_num=0.9):
-        '''swpie 扩展功能滑动的操作，滑动方向，4选1 "left", "right", "up", "down",scale_num 滑动的距离默认是屏幕的90%'''
-        self.logger.save_log("auto_d:向{}滑动，滑动距离为屏幕宽度or高度的{}%".format(ori, str(scale_num)))
-        self.driver.swipe_ext(ori, scale=scale_num)
+    def swipe_ext_dis(self, ori, scale_num=0.95, times=1):
+        '''swipe 扩展功能滑动的操作，滑动方向，4选1 "left", "right", "up", "down",scale_num 滑动的距离默认是屏幕的90%'''
+        # self.logger.save_log("auto_d:向{}滑动，滑动距离为屏幕宽度or高度的{}%".format(ori, str(scale_num)))
+        for i in range(times):
+            self.driver.swipe_ext(ori, scale=scale_num)
 
     def swipe_ext_part(self, ori, box=(0, 0, 100, 100)):
         """在一个区域点坐标直接滑动，exp：在 (0,0) -> (100, 100) 这个区域做滑动"""

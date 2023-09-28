@@ -143,8 +143,8 @@ class test_android:
         self.driver.phone_sleep(5)
         self.driver.click_exist_element(self.el.song_ready)
 
-        self.driver.scroll_to_ori('up')
-        self.driver.click_exist_element(self.el.song_next, w_time=15)
+        self.driver.swipe_ext_dis('up', times=2)
+        self.driver.click_exist_element(self.el.song_next, w_time=10)
 
     def test10_ugc(self):
         """
@@ -185,9 +185,9 @@ class test_android:
         self.driver.click_on_element(self.el.back_button, times=2)
 
     def test_button(self):
-        self.driver.click_on_element_offset(self.el.dynamic_detail)
-
+        # self.driver.click_on_element_offset(self.el.dynamic_detail)
+        self.driver.swipe_ext_dis('up', times=2)
         # self.driver.long_click_on_element(self.el.dynamic_voice)
 
 
-test_android().test11_ugc_detail()
+test_android().test_button()
