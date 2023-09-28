@@ -36,7 +36,7 @@ class CommonElementAndroid:
         # 评论
         self.live_msg = 'id,com.starmakerinteractive.starmaker:id/img_msg'
         self.live_meg_text = 'id,com.starmakerinteractive.starmaker:id/input_text_hint'
-        self.live_send_msg = ' id,com.starmakerinteractive.starmaker:id/send_button'
+        self.live_send_msg = 'id,com.starmakerinteractive.starmaker:id/btn_send'
         # 分享
         self.live_share = 'id,com.starmakerinteractive.starmaker:id/img_shareroom'
         self.live_share_friend = 'x,//*[@text="我的好友"]'

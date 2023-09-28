@@ -20,25 +20,22 @@ class test_android:
         self.driver.click_on_element(self.el.page_party)
         self.driver.click_on_element(self.el.live)
         self.driver.click_on_element(self.el.live_select)
-        self.driver.phone_sleep(3)
+        self.driver.phone_sleep(4)
         if self.driver.get_element(self.el.live_loading):
             self.driver.click_on_element(self.el.back_button)
             self.driver.click_on_element(self.el.live_select)
         self.driver.wait_e_dis_appear(self.el.live_anchor_follow)
         self.driver.click_on_element(self.el.live_anchor_follow)
         self.driver.scroll_to_ori(orientation='hr')
-        self.driver.phone_sleep(2)
+        self.driver.phone_sleep(1)
         self.driver.scroll_to_ori(orientation='hl')
         self.driver.click_on_element(self.el.live_msg)
-        self.driver.wait_e_dis_appear(self.el.live_meg_text)
-        self.driver.click_on_point(1032, 2050)
-        # self.driver.click_on_element(self.el.live_send_msg)
+        # self.driver.wait_e_dis_appear(self.el.live_send_msg)
+        self.driver.click_on_element(self.el.live_send_msg)
         self.driver.click_on_element(self.el.back_button)
-
-        self.driver.wait_e_dis_appear(self.el.live_share)
         self.driver.click_on_element(self.el.live_share)
         self.driver.click_on_element(self.el.back_button)
-        self.driver.click_on_element(self.el.ktv_gift)
+        self.driver.click_on_element(self.el.live_gift)
         self.driver.click_on_element(self.el.gift_send)
         if self.driver.wait_e_dis_appear(self.el.insufficient_balance):
             self.driver.click_on_element(self.el.back_button, times=2)
@@ -76,7 +73,7 @@ class test_android:
         self.driver.click_on_element(self.el.back_button, times=2)
         self.driver.click_on_element(self.el.ktv_share)
         self.driver.click_on_element(self.el.back_button)
-        self.driver.click_on_element(self.el.ktv_gift)
+        self.driver.click_on_element(self.el.live_gift)
         self.driver.click_on_element(self.el.gift_send)
         if self.driver.wait_e_dis_appear(self.el.insufficient_balance):
             self.driver.click_on_element(self.el.back_button, times=2)
@@ -121,5 +118,8 @@ class test_android:
         self.driver.click_on_element(self.el.back_button)
         self.driver.click_on_element(self.el.find_friend_follow)
 
+    def test_button(self):
+        self.driver.click_on_element(self.el.ktv_gift)
 
-test_android().test07_find_friend()
+
+test_android().test02_live()
