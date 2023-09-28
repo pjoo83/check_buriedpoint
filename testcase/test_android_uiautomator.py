@@ -129,8 +129,65 @@ class test_android:
         self.driver.click_on_element(self.el.notice_room_click)
         self.driver.click_on_element(self.el.back_button)
 
+    def test09_song(self):
+        """
+        演唱页面
+        """
+        self.driver.click_exist_element(self.el.page_song)
+        self.driver.click_exist_element(self.el.song_select)
+        self.driver.click_exist_element(self.el.back_button)
+        self.driver.click_exist_element(self.el.song_sing_btn)
+
+        self.driver.click_exist_element(self.el.song_know)
+        self.driver.click_exist_element(self.el.song_part)
+        self.driver.phone_sleep(5)
+        self.driver.click_exist_element(self.el.song_ready)
+
+        self.driver.scroll_to_ori('up')
+        self.driver.click_exist_element(self.el.song_next, w_time=15)
+
+    def test10_ugc(self):
+        """
+        广场页面
+        """
+        self.driver.click_on_element(self.el.page_dynamic)
+        self.driver.click_on_element(self.el.page_disc)
+        self.driver.click_exist_element(self.el.dynamic_clic)
+        self.driver.click_on_element(self.el.dynamic_user)
+        self.driver.click_on_element(self.el.back_button)
+
+        self.driver.click_on_element(self.el.dynamic_follow)
+        self.driver.click_on_element(self.el.dynamic_like)
+        self.driver.click_on_element(self.el.dynamic_comment)
+        self.driver.click_on_element(self.el.back_button, times=2)
+        self.driver.click_on_element(self.el.dynamic_gift)
+        self.driver.click_on_element(self.el.back_button, times=2)
+        self.driver.click_on_element(self.el.dynamic_share)
+        self.driver.click_on_element(self.el.back_button)
+        self.driver.long_click_on_element(self.el.dynamic_voice)
+        self.driver.click_on_element(self.el.back_button)
+
+    def test11_ugc_detail(self):
+        """
+        广场的详情页
+        """
+        self.driver.click_on_element(self.el.page_dynamic)
+        self.driver.click_on_element_offset(self.el.dynamic_detail)
+        self.driver.click_exist_element(self.el.dynamic_detail_like)
+        self.driver.click_on_element(self.el.dynamic_detail_follow)
+        self.driver.click_on_element(self.el.dynamic_detail_comment)
+        self.driver.click_on_element(self.el.back_button)
+        self.driver.click_exist_element(self.el.dynamic_detail_gift)
+        self.driver.click_on_element(self.el.back_button)
+        self.driver.click_on_element(self.el.dynamic_detail_share)
+        self.driver.click_on_element(self.el.back_button)
+        self.driver.long_click_on_element(self.el.dynamic_detail_voice)
+        self.driver.click_on_element(self.el.back_button, times=2)
+
     def test_button(self):
-        self.driver.click_on_element(self.el.ktv_gift)
+        self.driver.click_on_element_offset(self.el.dynamic_detail)
+
+        # self.driver.long_click_on_element(self.el.dynamic_voice)
 
 
-test_android().test02_live()
+test_android().test11_ugc_detail()

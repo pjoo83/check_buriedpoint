@@ -530,7 +530,7 @@ class Element:
         else:
             return False
 
-    def click_on_element(self, selector,times=1):
+    def click_on_element(self, selector, times=1):
         """点击元素"""
         # self.logger.save_log("auto_d:点击元素_{}".format(selector))
         # print("auto_d:点击元素_{}".format(selector))
@@ -538,8 +538,13 @@ class Element:
             self.get_element(selector).click()
             time.sleep(1)
 
-    # def click_on_element_bt_xpath(self,selector):
-    #     self.get_element()
+    def long_click_on_element(self, selector):
+        """长点"""
+        self.get_element(selector).long_click(3)
+
+    def click_on_element_offset(self, selector):
+        """点击偏移"""
+        self.get_element(selector).click(offset=(0, 0))
 
     def click_on_element_by_isntance(self, selector, instance_num=0):
         """点击元素通过元素index"""

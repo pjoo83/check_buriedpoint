@@ -22,7 +22,8 @@ class CommonElementAndroid:
         self.insufficient_balance = 'x,//*[@text="账户余额"]'
         self.page_party = 'x,//*[@content-desc="main_tab_discovery"]'
         self.gift_send = 'id,com.starmakerinteractive.starmaker:id/btn_send_gift'
-
+        self.page_song = 'x,//*[@content-desc="main_tab_sing"]/android.widget.FrameLayout[' \
+                         '1]/android.widget.ImageView[1] '
         # 直播部分=======================================================================================================
         self.live = 'x,//*[@text="直播"]'
         # 热门直播
@@ -94,3 +95,41 @@ class CommonElementAndroid:
         self.notice_room = 'x,//*[@resource-id="com.starmakerinteractive.starmaker:id/live_recommend_recycler_view"]'
         self.notice_room_click = 'x,//*[@resource-id="com.starmakerinteractive.starmaker:id' \
                                  '/live_recommend_recycler_view"]/android.widget.RelativeLayout[1] '
+
+        # 点唱页部分=====================================================================================================
+        self.song_select = 'x,//*[@resource-id="com.starmakerinteractive.starmaker:id/rcc_list"]/android.widget' \
+                           '.RelativeLayout[1] '
+        self.song_sing_btn = 'id,com.starmakerinteractive.starmaker:id/btn_sing'
+        self.song_know = 'id,com.starmakerinteractive.starmaker:id/recording_headset_dialog_i_know_btn'
+        self.song_part = 'x,//*[@text="唱片段"]'
+        self.song_ready = 'id,com.starmakerinteractive.starmaker:id/button_record_play'
+        self.song_next = 'x,//*[@resource-id="com.starmakerinteractive.starmaker:id' \
+                         '/tv_next_baserecord_fragment_edit_btn"] '
+
+        # 广场动态页=====================================================================================================
+        self.page_dynamic = 'x,//*[@text="动态"]'
+        self.page_disc = 'x,//*[@resource-id="com.starmakerinteractive.starmaker:id/sing_tab_layout"]/android.widget' \
+                         '.LinearLayout[1]/android.widget.FrameLayout[2] '
+        self.dynamic_clic = 'x,//*[@resource-id="com.starmakerinteractive.starmaker:id/recycler_view"]/android.widget' \
+                            '.LinearLayout[1]/android.view.ViewGroup[2]/android.widget.LinearLayout[1] '
+        self.dynamic_user = 'id,com.starmakerinteractive.starmaker:id/common_user_avatar'
+        self.dynamic_share = 'id,com.starmakerinteractive.starmaker:id/share_num_layout'
+        self.dynamic_like = 'id,com.starmakerinteractive.starmaker:id/layout_like'
+        self.dynamic_follow = 'id,com.starmakerinteractive.starmaker:id/new_v_follow'
+        self.dynamic_comment = 'id,com.starmakerinteractive.starmaker:id/tv_comment_hint'
+        self.dynamic_gift = 'id,com.starmakerinteractive.starmaker:id/tv_gift'
+        self.dynamic_voice = 'id,com.starmakerinteractive.starmaker:id/iv_send_danmu'
+        # 详情页
+        self.dynamic_detail = 'id,com.starmakerinteractive.starmaker:id/ll_trend_function'
+        self.dynamic_detail_follow = 'id,com.starmakerinteractive.starmaker:id/tv_follow'
+        self.dynamic_detail_like = 'id,com.starmakerinteractive.starmaker:id/lottie_like_view'
+        self.dynamic_detail_comment = 'id,com.starmakerinteractive.starmaker:id/layout_comment'
+        self.dynamic_detail_gift = 'id,com.starmakerinteractive.starmaker:id/layout_gift'
+        self.dynamic_detail_share = 'id,com.starmakerinteractive.starmaker:id/layout_share'
+        self.dynamic_detail_voice = 'id,com.starmakerinteractive.starmaker:id/iv_send_danmu'
+
+
+
+
+
+
