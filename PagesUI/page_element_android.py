@@ -1,22 +1,7 @@
-from appium.webdriver.common.mobileby import MobileBy
 
 
 class CommonElementAndroid:
     def __init__(self):
-        # 登录
-        self.login = (MobileBy.XPATH, '//*[@resource-id="com.starmakerinteractive.starmaker:id/tv_login_guide"]')
-        self.more_login = (MobileBy.XPATH, '//*[@resource-id="com.starmakerinteractive.starmaker:id/btn_more_ways"]')
-        self.select_email = (MobileBy.XPATH, '//*[@resource-id="com.starmakerinteractive.starmaker:id/txt_anchor"]')
-        self.select_use = (MobileBy.XPATH, '//*[@resource-id="com.starmakerinteractive.starmaker:id/ll_user1"]')
-        self.home_page = (MobileBy.XPATH, '//*[@text="房间"]')
-
-        # 退出
-        self.page_my = (MobileBy.XPATH, '//*[@content-desc="main_tab_me"]/android.widget.FrameLayout[1]')
-        self.settings = (MobileBy.XPATH, '//*[@resource-id="com.starmakerinteractive.starmaker:id/rcy_content'
-                                         '"]/android.widget.FrameLayout[2]')
-        self.logout = (MobileBy.XPATH, '//*[@resource-id="com.starmakerinteractive.starmaker:id/btn_settings_logout"]')
-        self.quit = (MobileBy.XPATH, '//*[@text="登出"]')
-
         # 通用==========================================================================================================
         self.back_button = 'id,com.android.systemui:id/back'
         self.insufficient_balance = 'x,//*[@text="账户余额"]'
