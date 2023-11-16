@@ -190,4 +190,4 @@ class test_android:
         # self.driver.long_click_on_element(self.el.dynamic_voice)
 
 
-test_android().test_button()
+test_android().test11_ugc_detail()
