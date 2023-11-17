@@ -536,18 +536,17 @@ class Element:
         else:
             return False
 
-    def click_on_element(self, selector, times=1):
+    def click_on_element(self, selector):
         """点击元素"""
         # self.logger.save_log("auto_d:点击元素_{}".format(selector))
         # print("auto_d:点击元素_{}".format(selector))
-        for i in range(times):
-            self.get_element(selector).click()
-            time.sleep(1)
+        self.get_element(selector).click()
+        time.sleep(1)
 
     def times_click_on_element(self, selector, times):
         """多次点击"""
         for i in range(times):
-            self.click_on_element(selector,times=1)
+            self.click_on_element(selector)
 
     def long_click_on_element(self, selector):
         """长点"""
