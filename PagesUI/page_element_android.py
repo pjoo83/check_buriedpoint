@@ -1,7 +1,7 @@
-
-
 class CommonElementAndroid:
     def __init__(self):
+        # 首页活动
+        self.party_img = '//*[@resource-id="com.starmakerinteractive.starmaker:id/img_cover_2"]'
         # 通用==========================================================================================================
         self.back_button = 'id,com.android.systemui:id/back'
         self.insufficient_balance = 'x,//*[@text="账户余额"]'
@@ -37,6 +37,7 @@ class CommonElementAndroid:
                              '.RelativeLayout[1] '
 
         # KTV部分 ======================================================================================================
+        self.ktv_tab='x,//*[@text="派对"]'
         self.ktv_page = 'x,//*[@text="歌房"]'
         self.ktv_tab = 'x,//*[@resource-id="com.starmakerinteractive.starmaker:id/tab_layout"]/android.widget' \
                        '.LinearLayout[1]/android.widget.FrameLayout[2] '
@@ -61,6 +62,7 @@ class CommonElementAndroid:
         self.chat_follow_page = 'x,//*[@resource-id="com.starmakerinteractive.starmaker:id/tab_layout"]/android' \
                                 '.widget.LinearLayout[1]/android.widget.FrameLayout[1] '
         self.chat_follow_recommend = 'id,com.starmakerinteractive.starmaker:id/tv_title'
+        self.chat_follow_nothing ='x,//*[@text="没有更多内容"]'
         self.chat_follow_recommend_select = 'x,//*[@resource-id="com.starmakerinteractive.starmaker:id/recycler_view' \
                                             '"]/android.widget.RelativeLayout[7] '
         self.chat_follow_recommend_follow = 'id,com.starmakerinteractive.starmaker:id/follow_icon'
@@ -90,13 +92,18 @@ class CommonElementAndroid:
         self.song_ready = 'id,com.starmakerinteractive.starmaker:id/button_record_play'
         self.song_next = 'x,//*[@resource-id="com.starmakerinteractive.starmaker:id' \
                          '/tv_next_baserecord_fragment_edit_btn"] '
+        self.song_save = 'x,//*[@resource-id="com.starmakerinteractive.starmaker:id' \
+                         '/ll_download_baserecord_fragment_edit_right"]'
+        self.song_attention ='x,//*[@resource-id="com.starmakerinteractive.starmaker:id/common_dialog_title"]'
+        self.song_publish = 'x,//*[@resource-id="com.starmakerinteractive.starmaker:id/publish_post"]'
+
 
         # 广场动态页=====================================================================================================
         self.page_dynamic = 'x,//*[@text="动态"]'
         self.page_disc = 'x,//*[@resource-id="com.starmakerinteractive.starmaker:id/sing_tab_layout"]/android.widget' \
                          '.LinearLayout[1]/android.widget.FrameLayout[2] '
-        self.dynamic_clic = 'x,//*[@resource-id="com.starmakerinteractive.starmaker:id/recycler_view"]/android.widget' \
-                            '.LinearLayout[1]/android.view.ViewGroup[2]/android.widget.LinearLayout[1] '
+        self.dynamic_click = 'x,//*[@resource-id="com.starmakerinteractive.starmaker:id/recycler_view"]/android.widget' \
+                             '.LinearLayout[1]/android.view.ViewGroup[2]/android.widget.LinearLayout[1] '
         self.dynamic_user = 'id,com.starmakerinteractive.starmaker:id/common_user_avatar'
         self.dynamic_share = 'id,com.starmakerinteractive.starmaker:id/share_num_layout'
         self.dynamic_like = 'id,com.starmakerinteractive.starmaker:id/layout_like'
@@ -113,8 +120,8 @@ class CommonElementAndroid:
         self.dynamic_detail_share = 'id,com.starmakerinteractive.starmaker:id/layout_share'
         self.dynamic_detail_voice = 'id,com.starmakerinteractive.starmaker:id/iv_send_danmu'
 
-
-
-
-
-
+        # sing排行榜======================================================================================================
+        self.rank_navigation = 'x,//*[@text="排行榜"]'
+        self.rank_select = 'x,//*[@resource-id="com.starmakerinteractive.starmaker:id/recycler_view"]/android.widget' \
+                           '.RelativeLayout[1]'
+        self.rank_detail_song = 'x,//*[@text="唱"]'
