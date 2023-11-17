@@ -82,7 +82,7 @@ class Element:
 
     def swipe_e(self, x1, y1, x2, y2, duration=0.5):
         """通过坐标滑动，滑动耗时默认是0.5s"""
-        self.logger.save_log("auto_d:滑动（swipe）_坐标{},{},{},{}".format(str(x1), str(y1), str(x2), str(y2)))
+        # self.logger.save_log("auto_d:滑动（swipe）_坐标{},{},{},{}".format(str(x1), str(y1), str(x2), str(y2)))
         self.driver.swipe(x1, y1, x2, y2, duration)
 
     def swipe_ext_dis(self, ori, scale_num=0.95, times=1):
@@ -444,6 +444,11 @@ class Element:
         # self.logger.save_log("auto_d:等待元素_{}消失，等待时间{}秒".format(selector, str(w_time)))
         return self.get_element(selector).wait_gone(w_time)
 
+    def wait_dis_click(self, selector, w_time=5):
+        """等待元素出现并点击"""
+        if self.get_element(selector).wait(w_time):
+            self.click_on_element(selector)
+
     def fling_orientation(self, orientation="down"):
         """滚动屏幕。down，horiz，vert，end"""
         self.logger.save_log("auto_d:在当前页面滚动fling_滚动方向{}".format(orientation))
@@ -538,6 +543,11 @@ class Element:
         for i in range(times):
             self.get_element(selector).click()
             time.sleep(1)
+
+    def times_click_on_element(self, selector, times):
+        """多次点击"""
+        for i in range(times):
+            self.click_on_element(selector,times=1)
 
     def long_click_on_element(self, selector):
         """长点"""
