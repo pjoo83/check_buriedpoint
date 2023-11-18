@@ -140,17 +140,18 @@ class test_android:
         self.driver.click_exist_element(self.el.song_part)
         self.driver.phone_sleep(5)
         self.driver.click_exist_element(self.el.song_ready)
-
         self.driver.swipe_ext_dis('up', times=2)
-        self.driver.wait_dis_click(self.el.song_save)
+        self.driver.wait_dis_click(self.el.song_sure)
+        self.driver.wait_dis_click(self.el.song_next)
         if self.driver.exist_element(self.el.song_attention):
             self.driver.times_click_on_element(self.el.back_button, 3)
-# 未完成部分
+            self.test09_song()
         else:
-
+            self.driver.click_on_element(self.el.song_save)
+            self.driver.wait_dis_click(self.el.song_to_publish)
+            self.driver.wait_dis_click(self.el.song_publish)
+            self.driver.click_on_element(self.el.song_complete_publish)
             self.driver.click_on_element(self.el.back_button)
-            self.driver.click_exist_element(self.el.song_next, w_time=10)
-            self.driver.click_on_element(self.el.song_publish)
 
     def test10_rank(self):
         """
@@ -206,7 +207,7 @@ class test_android:
 
     def test_button(self):
         # self.driver.times_click_on_element(self.el.ktv_tab, 1)
-        self.driver.click_on_element(self.el.live)
+        self.driver.click_on_element(self.el.song_complete_publish)
         # self.driver.swipe_e(x1=755, y1=742, x2=2, y2=742)
         # self.driver.long_click_on_element(self.el.dynamic_voice)
     #
@@ -217,4 +218,4 @@ class test_android:
     #         print(interface)
 
 
-test_android().test09_song()
+test_android().test_button()

@@ -37,7 +37,7 @@ class CommonElementAndroid:
                              '.RelativeLayout[1] '
 
         # KTV部分 ======================================================================================================
-        self.ktv_tab='x,//*[@text="派对"]'
+        self.ktv_tab = 'x,//*[@text="派对"]'
         self.ktv_page = 'x,//*[@text="歌房"]'
         self.ktv_tab = 'x,//*[@resource-id="com.starmakerinteractive.starmaker:id/tab_layout"]/android.widget' \
                        '.LinearLayout[1]/android.widget.FrameLayout[2] '
@@ -62,7 +62,7 @@ class CommonElementAndroid:
         self.chat_follow_page = 'x,//*[@resource-id="com.starmakerinteractive.starmaker:id/tab_layout"]/android' \
                                 '.widget.LinearLayout[1]/android.widget.FrameLayout[1] '
         self.chat_follow_recommend = 'id,com.starmakerinteractive.starmaker:id/tv_title'
-        self.chat_follow_nothing ='x,//*[@text="没有更多内容"]'
+        self.chat_follow_nothing = 'x,//*[@text="没有更多内容"]'
         self.chat_follow_recommend_select = 'x,//*[@resource-id="com.starmakerinteractive.starmaker:id/recycler_view' \
                                             '"]/android.widget.RelativeLayout[7] '
         self.chat_follow_recommend_follow = 'id,com.starmakerinteractive.starmaker:id/follow_icon'
@@ -92,10 +92,12 @@ class CommonElementAndroid:
         self.song_ready = 'id,com.starmakerinteractive.starmaker:id/button_record_play'
         self.song_next = 'x,//*[@resource-id="com.starmakerinteractive.starmaker:id' \
                          '/tv_next_baserecord_fragment_edit_btn"] '
-        self.song_save = 'x,//*[@resource-id="com.starmakerinteractive.starmaker:id' \
-                         '/ll_download_baserecord_fragment_edit_right"]'
-        self.song_attention ='x,//*[@resource-id="com.starmakerinteractive.starmaker:id/common_dialog_title"]'
+        self.song_sure ='x,//*[@resource-id="com.starmakerinteractive.starmaker:id/btn_ok"]'
+        self.song_save = 'x,//*[@resource-id="com.starmakerinteractive.starmaker:id/publish_save_draft"]'
+        self.song_attention = 'x,//*[@resource-id="com.starmakerinteractive.starmaker:id/common_dialog_title"]'
+        self.song_to_publish = 'x,//*[@resource-id="com.starmakerinteractive.starmaker:id/lyt_publish_immediately"]'
         self.song_publish = 'x,//*[@resource-id="com.starmakerinteractive.starmaker:id/publish_post"]'
+        self.song_complete_publish='x,//*[@text="完成"]'
 
 
         # 广场动态页=====================================================================================================
