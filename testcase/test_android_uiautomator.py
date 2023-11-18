@@ -129,13 +129,12 @@ class test_android:
 
     def test09_song(self):
         """
-        演唱页面
+        演唱歌曲，保存本地，并完成发布
         """
         self.driver.click_exist_element(self.el.page_song)
         self.driver.click_exist_element(self.el.song_select)
         self.driver.click_exist_element(self.el.back_button)
         self.driver.click_exist_element(self.el.song_sing_btn)
-
         self.driver.click_exist_element(self.el.song_know)
         self.driver.click_exist_element(self.el.song_part)
         self.driver.phone_sleep(5)
@@ -145,6 +144,7 @@ class test_android:
         self.driver.wait_dis_click(self.el.song_next)
         if self.driver.exist_element(self.el.song_attention):
             self.driver.times_click_on_element(self.el.back_button, 3)
+            self.driver.swipe_ext_dis('up')
             self.test09_song()
         else:
             self.driver.click_on_element(self.el.song_save)
