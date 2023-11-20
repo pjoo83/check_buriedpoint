@@ -226,7 +226,6 @@ class test_android:
         self.driver.click_on_element(self.el.dynamic_detail_comment)
         # self.driver.swipe_e(x1=755, y1=742, x2=2, y2=742)
         # self.driver.long_click_on_element(self.el.dynamic_voice)
-    #
     # def test_get_request(self):
     #     interfaces = device.interfaces()  # 获取设备上的所有接口信息
     #     print("Interfaces:")
