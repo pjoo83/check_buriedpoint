@@ -92,12 +92,12 @@ class test_android:
 
     def test06_msg_chat_page(self):
         """
-        聊天-推荐关注
+        聊天-聊天-推荐关注
         """
         self.driver.click_on_element(self.el.chat_page)
         self.driver.wait_e_dis_appear(self.el.chat_msg)
         if self.driver.wait_e_dis_appear(self.el.chat_msg_recommend) is False:
-            self.driver.scroll_to_ori('down')
+            self.driver.scroll_to_ori('up')
         self.driver.click_on_element(self.el.chat_msg_recommend)
         self.driver.click_on_element(self.el.back_button)
         self.driver.click_on_element(self.el.chat_msg_recommend_follow)
@@ -223,9 +223,27 @@ class test_android:
 
     def test14_chorus(self):
         """
-        合唱部分
+        合唱部分,录制合唱并发布
         """
-        pass
+        self.driver.wait_dis_click(self.el.chorus_inlet)
+        self.driver.wait_dis_click(self.el.chorus_select)
+        self.driver.click_on_element(self.el.back_button)
+        self.driver.wait_dis_click(self.el.chorus_join)
+        if self.driver.exist_element(self.el.chorus_authority):
+            self.driver.click_on_element(self.el.chorus_refuse)
+            self.driver.swipe_ext_dis('down')
+            self.test14_chorus()
+        self.driver.wait_dis_click(self.el.song_know)
+        self.driver.phone_sleep(3)
+        self.driver.wait_dis_click(self.el.song_ready)
+        self.driver.swipe_ext_dis('up')
+        self.driver.click_on_element(self.el.chorus_finish)
+        self.driver.wait_dis_click(self.el.chorus_finish_yes)
+        self.driver.wait_dis_click(self.el.song_next)
+        self.driver.wait_dis_click(self.el.song_save)
+        self.driver.wait_dis_click(self.el.song_to_publish)
+        self.driver.wait_dis_click(self.el.song_publish)
+        self.driver.times_click_on_element(self.el.back_button, 2)
 
     def test15_family(self):
         """
@@ -244,14 +262,10 @@ class test_android:
 
     def test_button(self):
         # self.driver.times_click_on_element(self.el.ktv_tab, 1)
-        self.driver.click_on_element(self.el.family_rank_select)
+        self.driver.click_on_element(self.el.song_publish)
+        # self.driver.swipe_ext_dis('up')
         # self.driver.swipe_e(x1=755, y1=742, x2=2, y2=742)
         # self.driver.long_click_on_element(self.el.dynamic_voice)
-    # def test_get_request(self):
-    #     interfaces = device.interfaces()  # 获取设备上的所有接口信息
-    #     print("Interfaces:")
-    #     for interface in interfaces:
-    #         print(interface)
 
 
-test_android().test15_family()
+test_android().test_button()

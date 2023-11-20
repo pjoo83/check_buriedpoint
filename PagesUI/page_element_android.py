@@ -148,4 +148,16 @@ class CommonElementAndroid:
         self.family_rank_receive_gift='x,//*[@text="收礼榜"]'
         self.family_rank_send_gift='x,//*[@text="送礼榜"]'
 
+        # 合唱==========================================================================================================
+        self.chorus_inlet='x,//*[@text="合唱"]'
+        self.chorus_select='x,//*[@resource-id="com.starmakerinteractive.starmaker:id/rcc_list"]/android.widget' \
+                           '.LinearLayout[1]'
+        self.chorus_join='x,//*[@text="加入"]'
+        self.chorus_authority='x,//*[@resource-id="com.android.permissioncontroller:id/permission_allow_button"]'
+        self.chorus_refuse='x,//*[@text="禁止"]'
+        self.chorus_finish='x,//*[@resource-id="com.starmakerinteractive.starmaker:id' \
+                           '/iv_done_recorder_song_fragment_song_record"]'
+        self.chorus_finish_yes= 'x,//*[@text="是"]'
+
+
 
