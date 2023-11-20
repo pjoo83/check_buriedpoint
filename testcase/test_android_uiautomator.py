@@ -116,7 +116,6 @@ class test_android:
         self.driver.click_on_element(self.el.chat_follow_recommend_select)
         self.driver.click_on_element(self.el.back_button)
         self.driver.click_on_element(self.el.chat_follow_recommend_follow)
-        self.driver.click_on_element(self.el.chat_follow_recommend_follow)
 
     def test08_find_friend(self):
         """
@@ -232,10 +231,20 @@ class test_android:
         """
         家族部分
         """
-        pass
+        self.driver.wait_dis_click(self.el.page_my)
+        self.driver.wait_dis_click(self.el.family_inlet)
+        self.driver.wait_dis_click(self.el.family_rank)
+        self.driver.wait_dis_click(self.el.family_rank_select)
+        self.driver.wait_dis_click(self.el.family_rank_join)
+        self.driver.swipe_ext_dis('up')
+        self.driver.click_on_element(self.el.family_rank_list)
+        self.driver.click_on_element(self.el.family_rank_receive_gift)
+        self.driver.click_on_element(self.el.family_rank_send_gift)
+        self.driver.times_click_on_element(self.el.back_button, 3)
+
     def test_button(self):
         # self.driver.times_click_on_element(self.el.ktv_tab, 1)
-        self.driver.click_on_element(self.el.sing_together_sing)
+        self.driver.click_on_element(self.el.family_rank_select)
         # self.driver.swipe_e(x1=755, y1=742, x2=2, y2=742)
         # self.driver.long_click_on_element(self.el.dynamic_voice)
     # def test_get_request(self):
@@ -245,4 +254,4 @@ class test_android:
     #         print(interface)
 
 
-test_android().test05_sing()
+test_android().test15_family()

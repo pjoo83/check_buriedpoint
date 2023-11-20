@@ -9,6 +9,7 @@ class CommonElementAndroid:
         self.gift_send = 'id,com.starmakerinteractive.starmaker:id/btn_send_gift'
         self.page_song = 'x,//*[@content-desc="main_tab_sing"]/android.widget.FrameLayout[' \
                          '1]/android.widget.ImageView[1] '
+        self.page_my = 'x,//*[@text="我的"]'
         # 直播部分=======================================================================================================
         self.live = 'x,//*[@text="直播"]'
         # 热门直播
@@ -50,12 +51,12 @@ class CommonElementAndroid:
 
         # 房间点歌部分====================================================================================================
         self.sing_room = 'x,//*[@resource-id="com.starmakerinteractive.starmaker:id/iv_quick_entry_room"]'
-        self.sing_my_room ='x,//*[@resource-id="com.starmakerinteractive.starmaker:id/ll_edit_room_container"]'
-        self.sing_change_types='x,//*[@resource-id="com.starmakerinteractive.starmaker:id/switch_mode_icon"]'
-        self.sing_together_sing='x,//*[@text="一起唱歌"]'
-        self.sing_choose= 'x,//*[@text="演唱"]'
-        self.sing_select='x,//*[@resource-id="com.starmakerinteractive.starmaker:id/rcc_list"]/android.widget' \
-                         '.RelativeLayout[1]/android.widget.TextView[1]'
+        self.sing_my_room = 'x,//*[@resource-id="com.starmakerinteractive.starmaker:id/ll_edit_room_container"]'
+        self.sing_change_types = 'x,//*[@resource-id="com.starmakerinteractive.starmaker:id/switch_mode_icon"]'
+        self.sing_together_sing = 'x,//*[@text="一起唱歌"]'
+        self.sing_choose = 'x,//*[@text="演唱"]'
+        self.sing_select = 'x,//*[@resource-id="com.starmakerinteractive.starmaker:id/rcc_list"]/android.widget' \
+                           '.RelativeLayout[1]/android.widget.TextView[1]'
         self.sing_cancel = 'x,//*[@resource-id="com.starmakerinteractive.starmaker:id/sing_cancel"]'
         # friends部分===================================================================================================
         # 聊天页
@@ -130,8 +131,21 @@ class CommonElementAndroid:
         self.dynamic_detail_share = 'id,com.starmakerinteractive.starmaker:id/layout_share'
         self.dynamic_detail_voice = 'id,com.starmakerinteractive.starmaker:id/iv_send_danmu'
 
-        # sing排行榜======================================================================================================
+        # sing排行榜=====================================================================================================
         self.rank_navigation = 'x,//*[@text="排行榜"]'
         self.rank_select = 'x,//*[@resource-id="com.starmakerinteractive.starmaker:id/recycler_view"]/android.widget' \
                            '.RelativeLayout[1]'
         self.rank_detail_song = 'x,//*[@text="唱"]'
+
+        # 家族==========================================================================================================
+        self.family_inlet = 'x,//*[@resource-id="com.starmakerinteractive.starmaker:id/rcy_content"]/android.widget' \
+                            '.FrameLayout[1]'
+        self.family_rank = 'x,//*[@resource-id="com.starmakerinteractive.starmaker:id/lyt_topbar"]/android.widget' \
+                           '.FrameLayout[1]/android.widget.LinearLayout[1]/android.widget.ImageButton[2]'
+        self.family_rank_select = 'x,//*[@text="1"]'
+        self.family_rank_join = 'x,//*[@text="加入"]'
+        self.family_rank_list ='x,//*[@text="榜单"]'
+        self.family_rank_receive_gift='x,//*[@text="收礼榜"]'
+        self.family_rank_send_gift='x,//*[@text="送礼榜"]'
+
+
