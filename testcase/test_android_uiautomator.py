@@ -192,8 +192,12 @@ class test_android:
         self.driver.click_on_element(self.el.dynamic_share)
         self.driver.click_on_element(self.el.back_button)
 
+    def test12_ugc_detail(self):
+        """
+        广场的详情页
+        """
         self.driver.swipe_ext_dis('up')
-        self.driver.click_on_element(self.el.page_dynamic)
+        self.driver.click_on_element(self.el.dynamic_detail)
         self.driver.wait_dis_click(self.el.dynamic_detail_follow)
         self.driver.click_on_element(self.el.dynamic_detail_like)
         self.driver.click_on_element(self.el.dynamic_detail_comment)
@@ -201,29 +205,17 @@ class test_android:
         self.driver.click_on_element(self.el.dynamic_detail_gift)
         self.driver.click_on_element(self.el.back_button)
         self.driver.click_on_element(self.el.dynamic_detail_share)
-        self.driver.click_on_element(self.el.back_button)
+        self.driver.times_click_on_element(self.el.back_button, 2)
 
-    def test12_ugc_detail(self):
+    def test13_chorus(self):
         """
-        广场的详情页
+        合唱部分
         """
-        self.driver.click_on_element(self.el.back_button)
-        self.driver.click_on_element(self.el.page_dynamic)
-        self.driver.click_on_element_offset(self.el.dynamic_detail)
-        self.driver.click_exist_element(self.el.dynamic_detail_like)
-        self.driver.click_on_element(self.el.dynamic_detail_follow)
-        self.driver.click_on_element(self.el.dynamic_detail_comment)
-        self.driver.click_on_element(self.el.back_button)
-        self.driver.click_exist_element(self.el.dynamic_detail_gift)
-        self.driver.click_on_element(self.el.back_button)
-        self.driver.click_on_element(self.el.dynamic_detail_share)
-        self.driver.click_on_element(self.el.back_button)
-        self.driver.long_click_on_element(self.el.dynamic_detail_voice)
-        self.driver.click_on_element(self.el.back_button, times=2)
+        pass
 
     def test_button(self):
         # self.driver.times_click_on_element(self.el.ktv_tab, 1)
-        self.driver.click_on_element(self.el.dynamic_detail_comment)
+        self.driver.click_on_element(self.el.dynamic_detail)
         # self.driver.swipe_e(x1=755, y1=742, x2=2, y2=742)
         # self.driver.long_click_on_element(self.el.dynamic_voice)
     # def test_get_request(self):
@@ -233,4 +225,4 @@ class test_android:
     #         print(interface)
 
 
-test_android().test_button()
+test_android().test12_ugc_detail()
