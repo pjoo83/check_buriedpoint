@@ -56,7 +56,7 @@ class CommonElementAndroid:
         self.sing_choose= 'x,//*[@text="演唱"]'
         self.sing_select='x,//*[@resource-id="com.starmakerinteractive.starmaker:id/rcc_list"]/android.widget' \
                          '.RelativeLayout[1]/android.widget.TextView[1]'
-        self.sing_cancle = 'x,//*[@resource-id="com.starmakerinteractive.starmaker:id/sing_cancel"]'
+        self.sing_cancel = 'x,//*[@resource-id="com.starmakerinteractive.starmaker:id/sing_cancel"]'
         # friends部分===================================================================================================
         # 聊天页
         self.chat_page = 'x,//*[@content-desc="main_tab_message"]'

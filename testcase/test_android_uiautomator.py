@@ -87,7 +87,7 @@ class test_android:
             self.driver.click_on_element(self.el.back_button)
         self.driver.wait_dis_click(self.el.sing_choose)
         self.driver.click_on_element(self.el.sing_select)
-        self.driver.click_on_element(self.el.sing_cancle)
+        self.driver.click_on_element(self.el.sing_cancel)
         self.driver.times_click_on_element(self.el.back_button, 2)
 
     def test06_msg_chat_page(self):
@@ -228,6 +228,11 @@ class test_android:
         """
         pass
 
+    def test15_family(self):
+        """
+        家族部分
+        """
+        pass
     def test_button(self):
         # self.driver.times_click_on_element(self.el.ktv_tab, 1)
         self.driver.click_on_element(self.el.sing_together_sing)
