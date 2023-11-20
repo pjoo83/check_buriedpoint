@@ -98,7 +98,8 @@ class CommonElementAndroid:
         self.song_to_publish = 'x,//*[@resource-id="com.starmakerinteractive.starmaker:id/lyt_publish_immediately"]'
         self.song_publish = 'x,//*[@resource-id="com.starmakerinteractive.starmaker:id/publish_post"]'
         self.song_complete_publish = 'x,//*[@text="完成"]'
-
+        self.song_facebook_publish = 'x,//*[@text="创建帖子"]'
+        self.song_facebook_cancel = 'x//*[@text="放弃"]'
         # 广场动态页=====================================================================================================
         self.page_dynamic = 'x,//*[@text="动态"]'
         self.page_disc = 'x,//*[@resource-id="com.starmakerinteractive.starmaker:id/sing_tab_layout"]/android.widget' \

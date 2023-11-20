@@ -147,9 +147,13 @@ class test_android:
             self.driver.swipe_ext_dis('up')
             self.test09_song()
         else:
-            self.driver.click_on_element(self.el.song_save)
+            self.driver.click_on_element(self.el.song_next)
+            self.driver.wait_dis_click(self.el.song_save)
             self.driver.wait_dis_click(self.el.song_to_publish)
             self.driver.wait_dis_click(self.el.song_publish)
+            if self.driver.exist_element(self.el.song_facebook_publish):
+                self.driver.click_on_element(self.el.back_button)
+                self.driver.wait_dis_click(self.el.song_facebook_cancel)
             self.driver.click_on_element(self.el.song_complete_publish)
             self.driver.click_on_element(self.el.back_button)
 
@@ -158,9 +162,11 @@ class test_android:
         排行榜
         """
         self.driver.click_on_element(self.el.page_song)
-        for i in range(2):
-            self.driver.swipe_e(x1=755, y1=742, x2=2, y2=742)
-        self.driver.wait_dis_click(self.el.rank_navigation)
+        if self.driver.wait_dis_click(self.el.rank_navigation) is False:
+            while True:
+                self.driver.swipe_e(x1=755, y1=742, x2=2, y2=742)
+                if self.driver.exist_element(self.el.rank_navigation):
+                    break
         self.driver.wait_dis_click(self.el.rank_detail_song)
         self.driver.wait_dis_click(self.el.song_know)
         self.driver.times_click_on_element(self.el.back_button, 2)
@@ -192,6 +198,7 @@ class test_android:
         """
         广场的详情页
         """
+        self.driver.click_on_element(self.el.back_button)
         self.driver.click_on_element(self.el.page_dynamic)
         self.driver.click_on_element_offset(self.el.dynamic_detail)
         self.driver.click_exist_element(self.el.dynamic_detail_like)
@@ -218,4 +225,4 @@ class test_android:
     #         print(interface)
 
 
-test_android().test_button()
+test_android().test10_rank()
