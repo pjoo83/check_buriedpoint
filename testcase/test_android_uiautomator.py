@@ -52,30 +52,45 @@ class test_android:
         self.driver.wait_dis_click(self.el.search_select)
         self.driver.times_click_on_element(self.el.back_button, 2)
 
-    def test04_ktv(self):
+    def test04_voice_room(self):
         """
-        KTV
+        语音房关注送礼
         """
         self.driver.click_on_element(self.el.ktv_tab)
         self.driver.click_on_element(self.el.page_party)
-        self.driver.click_on_element(self.el.ktv_page)
-        self.driver.click_on_element(self.el.ktv_tab)
+        # self.driver.click_on_element(self.el.ktv_page)
+        self.driver.click_on_element(self.el.ktv_tabs)
         self.driver.click_on_element(self.el.ktv_room_select)
         self.driver.wait_dis_click(self.el.ktv_room_owner)
         self.driver.wait_dis_click(self.el.ktv_room_homeowner)
         self.driver.click_on_element(self.el.ktv_follow)
         self.driver.click_on_element(self.el.ktv_follow)
         self.driver.click_on_element(self.el.ktv_cancel_follow)
-        self.driver.click_on_element(self.el.back_button, times=2)
+        self.driver.times_click_on_element(self.el.back_button, times=2)
         self.driver.click_on_element(self.el.ktv_share)
         self.driver.click_on_element(self.el.back_button)
-        self.driver.click_on_element(self.el.live_gift)
+        self.driver.click_on_element(self.el.ktv_gift)
         self.driver.click_on_element(self.el.gift_send)
         if self.driver.wait_e_dis_appear(self.el.insufficient_balance):
             self.driver.times_click_on_element(self.el.back_button, times=2)
         self.driver.click_on_element(self.el.back_button)
 
-    def test05_msg_chat_page(self):
+    def test05_sing(self):
+        """
+        房间点歌
+        """
+        self.driver.click_on_element(self.el.sing_room)
+        self.driver.wait_dis_click(self.el.sing_my_room)
+        self.driver.wait_dis_click(self.el.sing_change_types)
+        self.driver.wait_dis_click(self.el.sing_together_sing)
+        if self.driver.exist_element(self.el.sing_together_sing):
+            self.driver.click_on_element(self.el.back_button)
+        self.driver.wait_dis_click(self.el.sing_choose)
+        self.driver.click_on_element(self.el.sing_select)
+        self.driver.click_on_element(self.el.sing_cancle)
+        self.driver.times_click_on_element(self.el.back_button, 2)
+
+    def test06_msg_chat_page(self):
         """
         聊天-推荐关注
         """
@@ -87,7 +102,7 @@ class test_android:
         self.driver.click_on_element(self.el.back_button)
         self.driver.click_on_element(self.el.chat_msg_recommend_follow)
 
-    def test06_msg_follow_page(self):
+    def test07_msg_follow_page(self):
         """
         聊天-关注页
         """
@@ -103,7 +118,7 @@ class test_android:
         self.driver.click_on_element(self.el.chat_follow_recommend_follow)
         self.driver.click_on_element(self.el.chat_follow_recommend_follow)
 
-    def test07_find_friend(self):
+    def test08_find_friend(self):
         """
         好友搜索
         """
@@ -116,7 +131,7 @@ class test_android:
         self.driver.click_on_element(self.el.find_friend_follow)
         self.driver.times_click_on_element(self.el.back_button, 2)
 
-    def test08_notice_room(self):
+    def test09_notice_room(self):
         """
         消息通知页房间
         """
@@ -127,7 +142,7 @@ class test_android:
         self.driver.click_on_element(self.el.notice_room_click)
         self.driver.click_on_element(self.el.back_button)
 
-    def test09_song(self):
+    def test10_song(self):
         """
         演唱歌曲，保存本地，并完成发布
         """
@@ -157,7 +172,7 @@ class test_android:
             self.driver.click_on_element(self.el.song_complete_publish)
             self.driver.click_on_element(self.el.back_button)
 
-    def test10_rank(self):
+    def test11_rank(self):
         """
         排行榜
         """
@@ -173,7 +188,7 @@ class test_android:
         self.driver.click_on_element(self.el.rank_detail_song)
         self.driver.times_click_on_element(self.el.back_button, 2)
 
-    def test11_ugc(self):
+    def test12_ugc(self):
         """
         广场页面
         """
@@ -192,7 +207,7 @@ class test_android:
         self.driver.click_on_element(self.el.dynamic_share)
         self.driver.click_on_element(self.el.back_button)
 
-    def test12_ugc_detail(self):
+    def test13_ugc_detail(self):
         """
         广场的详情页
         """
@@ -207,7 +222,7 @@ class test_android:
         self.driver.click_on_element(self.el.dynamic_detail_share)
         self.driver.times_click_on_element(self.el.back_button, 2)
 
-    def test13_chorus(self):
+    def test14_chorus(self):
         """
         合唱部分
         """
@@ -215,7 +230,7 @@ class test_android:
 
     def test_button(self):
         # self.driver.times_click_on_element(self.el.ktv_tab, 1)
-        self.driver.click_on_element(self.el.dynamic_detail)
+        self.driver.click_on_element(self.el.sing_together_sing)
         # self.driver.swipe_e(x1=755, y1=742, x2=2, y2=742)
         # self.driver.long_click_on_element(self.el.dynamic_voice)
     # def test_get_request(self):
@@ -225,4 +240,4 @@ class test_android:
     #         print(interface)
 
 
-test_android().test12_ugc_detail()
+test_android().test05_sing()
