@@ -92,13 +92,12 @@ class CommonElementAndroid:
         self.song_ready = 'id,com.starmakerinteractive.starmaker:id/button_record_play'
         self.song_next = 'x,//*[@resource-id="com.starmakerinteractive.starmaker:id' \
                          '/tv_next_baserecord_fragment_edit_btn"] '
-        self.song_sure ='x,//*[@resource-id="com.starmakerinteractive.starmaker:id/btn_ok"]'
+        self.song_sure = 'x,//*[@resource-id="com.starmakerinteractive.starmaker:id/btn_ok"]'
         self.song_save = 'x,//*[@resource-id="com.starmakerinteractive.starmaker:id/publish_save_draft"]'
         self.song_attention = 'x,//*[@resource-id="com.starmakerinteractive.starmaker:id/common_dialog_title"]'
         self.song_to_publish = 'x,//*[@resource-id="com.starmakerinteractive.starmaker:id/lyt_publish_immediately"]'
         self.song_publish = 'x,//*[@resource-id="com.starmakerinteractive.starmaker:id/publish_post"]'
-        self.song_complete_publish='x,//*[@text="完成"]'
-
+        self.song_complete_publish = 'x,//*[@text="完成"]'
 
         # 广场动态页=====================================================================================================
         self.page_dynamic = 'x,//*[@text="动态"]'
