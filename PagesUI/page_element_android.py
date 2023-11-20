@@ -98,7 +98,7 @@ class CommonElementAndroid:
         self.song_sing_btn = 'id,com.starmakerinteractive.starmaker:id/btn_sing'
         self.song_know = 'id,com.starmakerinteractive.starmaker:id/recording_headset_dialog_i_know_btn'
         self.song_part = 'x,//*[@text="唱片段"]'
-        self.song_ready = 'id,com.starmakerinteractive.starmaker:id/button_record_play'
+        self.song_start = 'id,com.starmakerinteractive.starmaker:id/button_record_play'
         self.song_next = 'x,//*[@resource-id="com.starmakerinteractive.starmaker:id' \
                          '/tv_next_baserecord_fragment_edit_btn"] '
         self.song_sure = 'x,//*[@resource-id="com.starmakerinteractive.starmaker:id/btn_ok"]'

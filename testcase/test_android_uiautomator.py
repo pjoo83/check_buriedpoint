@@ -152,9 +152,10 @@ class test_android:
         self.driver.click_exist_element(self.el.song_know)
         self.driver.click_exist_element(self.el.song_part)
         self.driver.phone_sleep(5)
-        self.driver.click_exist_element(self.el.song_ready)
+        self.driver.click_exist_element(self.el.song_start)
         self.driver.swipe_ext_dis('up', times=2)
-        self.driver.wait_dis_click(self.el.song_sure)
+        if self.driver.wait_dis_click(self.el.song_sure) is True:
+            pass
         self.driver.wait_dis_click(self.el.song_next)
         if self.driver.exist_element(self.el.song_attention):
             self.driver.times_click_on_element(self.el.back_button, 3)
@@ -235,7 +236,7 @@ class test_android:
             self.test14_chorus()
         self.driver.wait_dis_click(self.el.song_know)
         self.driver.phone_sleep(3)
-        self.driver.wait_dis_click(self.el.song_ready)
+        self.driver.wait_dis_click(self.el.song_start)
         self.driver.swipe_ext_dis('up')
         self.driver.click_on_element(self.el.chorus_finish)
         self.driver.wait_dis_click(self.el.chorus_finish_yes)
@@ -245,7 +246,28 @@ class test_android:
         self.driver.wait_dis_click(self.el.song_publish)
         self.driver.times_click_on_element(self.el.back_button, 2)
 
-    def test15_family(self):
+    def test15_detail_chorus(self):
+        """
+        歌曲详情页发布
+        """
+        self.driver.click_on_element(self.el.song_sing_btn)
+        self.driver.wait_dis_click(self.el.song_know)
+        self.driver.click_on_element(self.el.chorus_inlet)
+        self.driver.click_on_element(self.el.chorus_join)
+        self.driver.wait_dis_click(self.el.song_know)
+        self.driver.wait_dis_click(self.el.song_start)
+        self.driver.swipe_ext_dis('up')
+        self.driver.click_on_element(self.el.chorus_finish)
+        self.driver.wait_dis_click(self.el.chorus_finish_yes)
+        if self.driver.wait_dis_click(self.el.song_sure) is True:
+            pass
+        self.driver.wait_dis_click(self.el.song_next)
+        self.driver.wait_dis_click(self.el.song_save)
+        self.driver.wait_dis_click(self.el.song_to_publish)
+        self.driver.wait_dis_click(self.el.song_publish)
+        self.driver.times_click_on_element(self.el.back_button, 2)
+
+    def test16_family(self):
         """
         家族部分
         """
@@ -262,8 +284,8 @@ class test_android:
 
     def test_button(self):
         # self.driver.times_click_on_element(self.el.ktv_tab, 1)
-        self.driver.click_on_element(self.el.song_publish)
-        # self.driver.swipe_ext_dis('up')
+        # self.driver.click_on_element(self.el.song_start)
+        self.driver.swipe_ext_dis('up')
         # self.driver.swipe_e(x1=755, y1=742, x2=2, y2=742)
         # self.driver.long_click_on_element(self.el.dynamic_voice)
 
