@@ -39,8 +39,7 @@ class CommonElementAndroid:
         # KTV部分 ======================================================================================================
         self.ktv_tab = 'x,//*[@text="派对"]'
         self.ktv_page = 'x,//*[@text="歌房"]'
-        self.ktv_tab = 'x,//*[@resource-id="com.starmakerinteractive.starmaker:id/tab_layout"]/android.widget' \
-                       '.LinearLayout[1]/android.widget.FrameLayout[2] '
+        self.ktv_tabs = 'x,//*[@text="卡拉OK"]'
         self.ktv_room_select = 'id,com.starmakerinteractive.starmaker:id/room_bg'
         self.ktv_room_owner = 'id,com.starmakerinteractive.starmaker:id/room_owner_level'
         self.ktv_room_homeowner = 'id,com.starmakerinteractive.starmaker:id/rl_owner_container'
@@ -49,6 +48,15 @@ class CommonElementAndroid:
         self.ktv_share = 'id,com.starmakerinteractive.starmaker:id/player_act_share'
         self.ktv_gift = 'id,com.starmakerinteractive.starmaker:id/v_menu_send_gift'
 
+        # 房间点歌部分====================================================================================================
+        self.sing_room = 'x,//*[@resource-id="com.starmakerinteractive.starmaker:id/iv_quick_entry_room"]'
+        self.sing_my_room ='x,//*[@resource-id="com.starmakerinteractive.starmaker:id/ll_edit_room_container"]'
+        self.sing_change_types='x,//*[@resource-id="com.starmakerinteractive.starmaker:id/switch_mode_icon"]'
+        self.sing_together_sing='x,//*[@text="一起唱歌"]'
+        self.sing_choose= 'x,//*[@text="演唱"]'
+        self.sing_select='x,//*[@resource-id="com.starmakerinteractive.starmaker:id/rcc_list"]/android.widget' \
+                         '.RelativeLayout[1]/android.widget.TextView[1]'
+        self.sing_cancle = 'x,//*[@resource-id="com.starmakerinteractive.starmaker:id/sing_cancel"]'
         # friends部分===================================================================================================
         # 聊天页
         self.chat_page = 'x,//*[@content-desc="main_tab_message"]'
