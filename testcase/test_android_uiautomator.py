@@ -10,6 +10,21 @@ class test_android:
         self.driver = GetDriver_u2().create_driver(init_driver_android_ui2())
         self.el = CommonElementAndroid()
 
+    def unified_release(self):
+        self.driver.wait_dis_click(self.el.song_know)
+        self.driver.phone_sleep(3)
+        self.driver.wait_dis_click(self.el.song_start)
+        self.driver.swipe_ext_dis('up')
+        self.driver.click_on_element(self.el.chorus_finish)
+        self.driver.wait_dis_click(self.el.chorus_finish_yes)
+        if self.driver.wait_dis_click(self.el.song_sure) is True:
+            pass
+        self.driver.wait_dis_click(self.el.song_next)
+        self.driver.wait_dis_click(self.el.song_save)
+        self.driver.wait_dis_click(self.el.song_to_publish)
+        self.driver.wait_dis_click(self.el.song_publish)
+        self.driver.times_click_on_element(self.el.back_button, 2)
+
     def test01_star_app(self):
         self.driver.open_app('com.starmakerinteractive.starmaker')
         if self.driver.exist_element(self.el.party_img):
@@ -234,17 +249,7 @@ class test_android:
             self.driver.click_on_element(self.el.chorus_refuse)
             self.driver.swipe_ext_dis('down')
             self.test14_chorus()
-        self.driver.wait_dis_click(self.el.song_know)
-        self.driver.phone_sleep(3)
-        self.driver.wait_dis_click(self.el.song_start)
-        self.driver.swipe_ext_dis('up')
-        self.driver.click_on_element(self.el.chorus_finish)
-        self.driver.wait_dis_click(self.el.chorus_finish_yes)
-        self.driver.wait_dis_click(self.el.song_next)
-        self.driver.wait_dis_click(self.el.song_save)
-        self.driver.wait_dis_click(self.el.song_to_publish)
-        self.driver.wait_dis_click(self.el.song_publish)
-        self.driver.times_click_on_element(self.el.back_button, 2)
+        self.unified_release()
 
     def test15_detail_chorus(self):
         """
@@ -254,18 +259,7 @@ class test_android:
         self.driver.wait_dis_click(self.el.song_know)
         self.driver.click_on_element(self.el.chorus_inlet)
         self.driver.click_on_element(self.el.chorus_join)
-        self.driver.wait_dis_click(self.el.song_know)
-        self.driver.wait_dis_click(self.el.song_start)
-        self.driver.swipe_ext_dis('up')
-        self.driver.click_on_element(self.el.chorus_finish)
-        self.driver.wait_dis_click(self.el.chorus_finish_yes)
-        if self.driver.wait_dis_click(self.el.song_sure) is True:
-            pass
-        self.driver.wait_dis_click(self.el.song_next)
-        self.driver.wait_dis_click(self.el.song_save)
-        self.driver.wait_dis_click(self.el.song_to_publish)
-        self.driver.wait_dis_click(self.el.song_publish)
-        self.driver.times_click_on_element(self.el.back_button, 2)
+        self.unified_release()
 
     def test16_family(self):
         """
