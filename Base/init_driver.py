@@ -47,3 +47,8 @@ def init_driver_android_ui2():
     device = u2.connect_usb('b7924af6')
     # driver = d.app_start('com.starmakerinteractive.starmaker')
     return device
+
+
+def init_driver_ios_ui2():
+    device = u2.connect_usb('00008110-0006616A0AD9401E')
+    return device
