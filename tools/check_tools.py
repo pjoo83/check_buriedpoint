@@ -12,7 +12,7 @@ def point_lists():
 
     :return:本地址为需要检测点的文件地址
     """
-    point_file = read_file(r'D:\project\Airtest_Check_BuriedPoints\event_point_file\event_info.xlsx')
+    point_file = read_file(r'../event_info.xlsx')
     point_list = point_file.values
     return point_list
 
@@ -41,7 +41,7 @@ def check_tools(file):
     event_list = get_events(file)[0]
     for i in range(len(event_list)):
         events = event_list[i]['event']
-        r_info = event_list[i]['event_extra'].get('r_info')
+        r_info = event_list[i]['event_extra']
         for p in range(len(need_point)):
             if events == need_point[p] and need_r_info[p] == 'no':
                 if 'r_info' in event_list[i]['event_extra']:
@@ -50,8 +50,6 @@ def check_tools(file):
                     no_info_list.append(events)
             elif events == need_point[p] and need_r_info[p] == 'yes':
                 if r_info == '':
-                    # print(f"本埋点为{events},本次含有的r_info{r_info}"
-                    #       f"但值为空!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!")
                     logger.error(f"本埋点为{events},本次含有的r_info{r_info}"
                                  f"但值为空!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!")
 
@@ -64,15 +62,18 @@ def check_tools(file):
     if check_same_point(r_info_list):
         for i in check_same_point(r_info_list):
             logger.error(f"埋点{i}重复")
-    print(r_info_list)
+    leak_detection(file)
+    # print(r_info_list)
 
 
 # 查找没有的
-# def leak_detection():
-#     need_point1 = need_Points()[1]
-#     for p in range(len(need_point1)):
-#         if need_point1[p] not in get_events()[1]:
-#             print(f'{need_point1[p]}丢失')
+def leak_detection(file):
+    need_point1 = need_Points()[1]
+    events = get_events(file)[1]
+    for p in range(len(need_point1)):
+        if need_point1[p] not in events:
+            print(f'{need_point1[p]}丢失')
+            logger.error(f'{need_point1[p]}丢失')
 
 
 def get_events(file):
@@ -93,7 +94,6 @@ def get_events(file):
 
 def need_Points():
     """
-
     :return: 获取需要的埋点
     """
     need_point_list = []
@@ -117,20 +117,26 @@ def check_same_point(point_list):
         for z in range(h + 1, len(point_list)):
             if point_list[h] == point_list[z]:
                 same_list.append(point_list[h])
+    # for i in point_list:
+    #     if point_list.count(i) >= 2:
+    #         same_list.append(i)
+    #         print(f"{i}出现的次次数{point_list.count(i)}")
     return same_list
 
 
 # check_tools()
 
 def get_all_file():
-    file_list = find_file("../test_1030", include_str=".chlsj")
+    file_list = find_file("../json_datas", include_str="an")
+    # file_list = find_file("../ios_jsondata", include_str="2-2")
+
     return file_list
 
 
 def start_check():
     for check in get_all_file():
         print(check)
-        logger.debug("开始下一个文件========================================")
+        logger.debug("开始检测========================================")
         check_tools(check)
 
 

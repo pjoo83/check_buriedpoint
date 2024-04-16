@@ -42,11 +42,12 @@ class CommonElementAndroid:
         self.ktv_page = 'x,//*[@text="歌房"]'
         self.ktv_tabs = 'x,//*[@text="卡拉OK"]'
         self.ktv_room_select = 'id,com.starmakerinteractive.starmaker:id/room_bg'
-        self.ktv_room_owner = 'id,com.starmakerinteractive.starmaker:id/room_owner_level'
+        self.ktv_room_owner = 'x,//*[@resource-id="com.starmakerinteractive.starmaker:id/room_owner_level"]'
         self.ktv_room_homeowner = 'id,com.starmakerinteractive.starmaker:id/rl_owner_container'
-        self.ktv_follow = 'id,com.starmakerinteractive.starmaker:id/btn_follow'
+        self.ktv_follow = 'x,//*[@text="关注"]'
+        self.ktv_following = 'x,//*[@resource-id="com.starmakerinteractive.starmaker:id/btn_follow"]'
         self.ktv_cancel_follow = 'id,com.starmakerinteractive.starmaker:id/common_dialog_btn_positive'
-        self.ktv_share = 'id,com.starmakerinteractive.starmaker:id/player_act_share'
+        self.ktv_share = 'x,//*[@resource-id="com.starmakerinteractive.starmaker:id/share_room"]'
         self.ktv_gift = 'id,com.starmakerinteractive.starmaker:id/v_menu_send_gift'
 
         # 房间点歌部分====================================================================================================
@@ -144,20 +145,25 @@ class CommonElementAndroid:
                            '.FrameLayout[1]/android.widget.LinearLayout[1]/android.widget.ImageButton[2]'
         self.family_rank_select = 'x,//*[@text="1"]'
         self.family_rank_join = 'x,//*[@text="加入"]'
-        self.family_rank_list ='x,//*[@text="榜单"]'
-        self.family_rank_receive_gift='x,//*[@text="收礼榜"]'
-        self.family_rank_send_gift='x,//*[@text="送礼榜"]'
+        self.family_rank_list = 'x,//*[@text="榜单"]'
+        self.family_rank_receive_gift = 'x,//*[@text="收礼榜"]'
+        self.family_rank_send_gift = 'x,//*[@text="送礼榜"]'
 
         # 合唱==========================================================================================================
-        self.chorus_inlet='x,//*[@text="合唱"]'
-        self.chorus_select='x,//*[@resource-id="com.starmakerinteractive.starmaker:id/rcc_list"]/android.widget' \
-                           '.LinearLayout[1]'
-        self.chorus_join='x,//*[@text="加入"]'
-        self.chorus_authority='x,//*[@resource-id="com.android.permissioncontroller:id/permission_allow_button"]'
-        self.chorus_refuse='x,//*[@text="禁止"]'
-        self.chorus_finish='x,//*[@resource-id="com.starmakerinteractive.starmaker:id' \
-                           '/iv_done_recorder_song_fragment_song_record"]'
-        self.chorus_finish_yes= 'x,//*[@text="是"]'
+        self.chorus_inlet = 'x,//*[@text="合唱"]'
+        self.chorus_select = 'x,//*[@resource-id="com.starmakerinteractive.starmaker:id/rcc_list"]/android.widget' \
+                             '.LinearLayout[1]'
+        self.chorus_join = 'x,//*[@text="加入"]'
+        self.chorus_authority = 'x,//*[@resource-id="com.android.permissioncontroller:id/permission_allow_button"]'
+        self.chorus_refuse = 'x,//*[@text="禁止"]'
+        self.chorus_finish = 'x,//*[@resource-id="com.starmakerinteractive.starmaker:id' \
+                             '/iv_done_recorder_song_fragment_song_record"]'
+        self.chorus_finish_yes = 'x,//*[@text="是"]'
 
-
-
+        # 新feed==================================
+        # 作品
+        self.new_feed_works_like = 'x,//*[@resource-id="com.starmakerinteractive.starmaker:id/iv_follow"]'
+        self.new_feed_stop_works = 'x,//*[@resource-id="com.starmakerinteractive.starmaker:id/v_play_btn_hot_area"]'
+        self.new_feed_works_share = 'x,//*[@resource-id="com.starmakerinteractive.starmaker:id/iv_share"]'
+        self.new_feed_works_comment = 'x,//*[@resource-id="com.starmakerinteractive.starmaker:id/iv_comment"]'
+        self.new_feed_works_gift = ''
